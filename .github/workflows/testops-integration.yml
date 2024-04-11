@@ -61,3 +61,9 @@ jobs:
           printenv | grep GITHUB_
       - name: List results
         run: ls -la ${ALLURE_RESULTS}
+
+      - name: Upload Allure Results
+        uses: actions/upload-artifact@v2
+        with:
+          name: allure-results
+          path: ${{ env.ALLURE_RESULTS }}
