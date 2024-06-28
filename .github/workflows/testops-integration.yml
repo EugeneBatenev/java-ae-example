@@ -20,7 +20,7 @@ on:
         required: false
 
 env:
-  ALLURE_ENDPOINT: https://testing.testops.cloudxxxxxx---------------------------------------
+  ALLURE_ENDPOINT: https://testing.testops.cloud
   ALLURE_TOKEN: ${{ secrets.ALLURE_TOKEN }}
   ALLURE_PROJECT_ID: ${{ secrets.ALLURE_PROJECT_ID }}
   ALLURE_TESTPLAN_PATH: "./testplan.json"
@@ -39,7 +39,7 @@ jobs:
       - name: install and configure allurectl
         uses: allure-framework/setup-allurectl@v1
         with:
-          allure-endpoint: https://testing.testops.cloud----------------------------------------------------
+          allure-endpoint: https://testing.testops.cloud
           allure-token: ${{ secrets.ALLURE_TOKEN }}
           allure-project-id: ${{ secrets.ALLURE_PROJECT_ID }}
       - name: Prepare TestPlan
