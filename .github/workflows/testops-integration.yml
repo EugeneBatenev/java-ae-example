@@ -53,6 +53,11 @@ jobs:
         env:
           TEST_ENDPOINT: ${{ github.event.inputs.TEST_ENDPOINT }}
           TEST_BROWSER: ${{ github.event.inputs.TEST_BROWSER }}
+      - name: Extract and save ALLURE_JOB_RUN_ID
+        run: |
+          ALLURE_JOB_RUN_ID=$(printenv | grep 'ALLURE_JOB_RUN_ID' | cut -d '=' -f2)
+          echo "ALLURE_JOB_RUN_ID=${ALLURE_JOB_RUN_ID}" >> $GITHUB_ENV
+          echo "ALLURE_JOB_RUN_ID: ${ALLURE_JOB_RUN_ID}"
       - name: Get ALLURE_ environments
         run: | 
           printenv | grep ALLURE_
