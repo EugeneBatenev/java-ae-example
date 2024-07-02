@@ -61,7 +61,9 @@ jobs:
           echo "ALLURE_JOB_RUN_ID: ${ALLURE_JOB_RUN_ID}"
       - name: Get ALLURE_ environments
         run: | 
+         export $(allurectl job-run env)
           printenv | grep ALLURE_
+          echo ${ALLURE_JOB_RUN_ID}
       - name: Get GITHUB_ environments
         run: | 
           printenv | grep GITHUB_
