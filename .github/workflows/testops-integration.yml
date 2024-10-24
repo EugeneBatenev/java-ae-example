@@ -71,7 +71,7 @@ jobs:
         run: ls -la ${ALLURE_RESULTS}
 
       - name: Upload Allure Results
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: allure-results
           path: ${{ env.ALLURE_RESULTS }}
